@@ -15,12 +15,13 @@ export const FETCH_FAILURE = "FETCH_FAILURE";
 
 export const fetching = () => dispatch => {
     dispatch({type: FETCHING});
-    Axios.get('https://swapi.co/ap/people/')
+    Axios.get('https://swapi.co/api/peole/')
         .then(res => {
             console.log(res);
             dispatch({type: FETCH_SUCCESS, payload: res.data.results})
         })
         .catch(err => {
-            dispatch({type: FETCH_FAILURE, payload: err.response.error.message})
+            console.log(err)
+            dispatch({type: FETCH_FAILURE, payload: err.message})
         })
 }
