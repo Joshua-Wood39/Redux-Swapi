@@ -15,7 +15,7 @@ export const FETCH_FAILURE = "FETCH_FAILURE";
 
 export const fetching = () => dispatch => {
     dispatch({type: FETCHING});
-    Axios.get('https://swapi.co/api/people/')
+    Axios.get('https://swapi.co/ap/people/')
         .then(res => {
             console.log(res);
             dispatch({type: FETCH_SUCCESS, payload: res.data.results})
